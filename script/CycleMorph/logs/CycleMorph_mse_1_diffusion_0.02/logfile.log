@@ -1,0 +1,95 @@
+initialization method [normal]
+initialization method [normal]
+---------- Networks initialized -------------
+registUnetGenerator(
+  (model): registUnetBlock(
+    (inconv): inblock(
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(2, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (downconv1): downblock(
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(16, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (downconv2): downblock(
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (downconv3): downblock(
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (downconv4): downblock(
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (upconv1): upblock(
+      (upconv): ConvTranspose3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), output_padding=(1, 1, 1))
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (upconv2): upblock(
+      (upconv): ConvTranspose3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), output_padding=(1, 1, 1))
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (upconv3): upblock(
+      (upconv): ConvTranspose3d(32, 32, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), output_padding=(1, 1, 1))
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (keepblock): CRblock(
+      (block): Sequential(
+        (0): Conv3d(32, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+        (1): LeakyReLU(negative_slope=0.2, inplace=True)
+      )
+    )
+    (upconv4): upblock(
+      (upconv): ConvTranspose3d(8, 8, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1), output_padding=(1, 1, 1))
+      (block): CRblock(
+        (block): Sequential(
+          (0): Conv3d(24, 8, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+          (1): LeakyReLU(negative_slope=0.2, inplace=True)
+        )
+      )
+    )
+    (outconv): outblock(
+      (upconv): Conv3d(8, 3, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+    )
+    (stn): Dense3DSpatialTransformer()
+  )
+)
+Total number of parameters: 361299
+-----------------------------------------------
